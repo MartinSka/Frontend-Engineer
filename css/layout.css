@@ -1,6 +1,6 @@
-header {
-  background: white;
-  border-bottom: 1px solid #e5e5e5;
+body > header {
+  background-color: #4d7496;
+  border-bottom: 4px solid #2a4053;
   height: 45px;
   width: 100%;
 }
