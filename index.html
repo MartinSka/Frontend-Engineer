@@ -6,27 +6,29 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-
-    <link rel="stylesheet" href="css/normalize.min.css">
+    
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/module.css">
-    <link rel="stylesheet" href="css/state.css">
+    <!--<link rel="stylesheet" href="css/state.css">-->
 </head>
 <body>
     <header>
-        <div class="user">
-            <img />
-            Martin
-            <ul>
-                <li>My task</li>
-                <li>New info</li>
-                <li>Configuration</li>
-            </ul>
+        <div class="container">
+            <img class="logo" />
+            <nav>                
+                <ul>
+                    <li>Alert</li>
+                    <li>New info</li>
+                    <li>John Doe</li>
+                </ul>
+            </nav>
         </div>
     </header>
-    <div id="navigation" class="box">        
+    <div id="navigation"> 
+        <h2>Tasks</h2>
         <ul>
+            <li>New Project</li>
             <li>
                 <h3>House</h3>
                 <ul>
@@ -42,17 +44,20 @@
         </ul>
     </div>
 
-    <div id="main" class="box">
-        <h2>Supermarcado</h2>
+    <div id="main">
+        <h2>Project Name</h2>
         <ul>
             <li>
-                Check | Martin                           Fav | Label | Trash
+                <input paceholder="Add Task">
+            </li>
+            <li>
+                Check | Task 1                           Fav | Label | Trash
                 Lista de cosas para el supermarcado
             </li>
         </ul>
     </div>
 
-    <div id="sidebar" class="box">
+    <div id="sidebar">
         <header>
             Asignado | Fecha fin | SubTask| Close              
         </header>
@@ -69,8 +74,13 @@
             Quienes esta | Asignar + followers
     </div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>    
-    <script src="js/main.js"></script>
+    <script data-main="js/main" src="js/require.js"></script>
+
+    <script type="text/template" id="task-template">
+        <input type="checkbox">
+        <Label><%= title %></label>
+        <button>Delete</button>
+    </script>
 
 </body>
 <!-- HEADER
