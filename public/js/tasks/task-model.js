@@ -1,7 +1,9 @@
 define([
 		'backbone'
 	], function(Backbone){
-		app.Task = Backbone.Model.extend(){
-			
-		}
+		Task = Backbone.Model.extend({
+			default: {
+				complete: false
+			}
+		});
 	})

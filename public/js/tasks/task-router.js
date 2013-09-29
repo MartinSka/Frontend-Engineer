@@ -4,7 +4,7 @@ define(
      'tasks/task-view'
 	],
 
-	function(Backbone, TasksListView) {		
+	function(Backbone, Views) {		
 		
 		var Router = Backbone.Router.extend({
 			routes:{
@@ -16,7 +16,7 @@ define(
 			router = new Router();
 			
 			router.on('route:home', function(){
-				viewtasksList = new TasksListView();
+				viewtasksList = new Views.TasksList();
 			});
 
 			Backbone.history.start();

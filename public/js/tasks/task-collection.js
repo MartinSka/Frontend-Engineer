@@ -1,9 +1,9 @@
 define([
-		'backbone'
+		'backbone', 'tasks/task-model'
 	], function(Backbone){
 		TasksList = Backbone.Collection.extend({
-			url: '/tasks'
-			
+			url: '/tasks',
+			model: Task
 		});
 
 		return TasksList;
