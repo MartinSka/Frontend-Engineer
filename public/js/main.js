@@ -7,8 +7,15 @@ require.config({
     }
 });
 
-require(['tasks/task-router', 'dpd'], function(Router, dpd){ 
+require(['tasks/task-router', 'tasks/task-model', 'dpd'], function(Router, dpd){ 
 
-    Router.initialize()
-    
+    Router.initialize();
+
+    $('#new-task').submit(function(e) {
+    	e.preventDefault();
+    	value = $(this).find('input').val();
+    	//Crear view, despues model y salvar
+    	//task = new Task({title: value});
+    	//task.save();
+    });    
 });

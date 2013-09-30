@@ -25,7 +25,7 @@ define(
 
 				tasksList.fetch({
 					success: function(){
-						that.$el.html('');
+						//that.$el.html('');
 						tasksList.each(function(task) {
 							 that.addOne(task);
 						});
@@ -34,7 +34,8 @@ define(
 			},
 
 			addOne: function(task){
-				console.log('addOne');
+				console.log(task);
+				//(task === '')
 				taskView = new TaskView({model: task});
 				this.$el.append( taskView.render().el );
 			},
