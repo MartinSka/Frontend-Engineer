@@ -10,6 +10,12 @@ define(
 
 			template: _.template( $('#task-template').html() ),
 
+			initialize: function(value){
+				task = new Task({title: value});
+				t = task.render();
+				$('#bla').append(t);
+			},
+
 			render: function(){
 				var template = this.template( this.model.toJSON() );
 				this.$el.html(template);
@@ -35,7 +41,7 @@ define(
 
 			addOne: function(task){
 				console.log(task);
-				//(task === '')
+			
 				taskView = new TaskView({model: task});
 				this.$el.append( taskView.render().el );
 			},

@@ -1,0 +1,137 @@
+/* CheatSheet */
+
+Polimorfismo
+
+Por ejemplo supongamos un método tocar en instrumento que imprime en pantalla “Toco un instrumento” y que se sobreescribió en la clase guitarra para que escribiera “Toco una guitarra”. Si creamos un objeto de la clase guitarra pero la enlazamos a una referencia de la clase instrumento, entonces guitarra se comportará como un objeto de la clase instrumento, olvidando que tiene otros métodos y propiedades que no sean los que estaban definidos en la clase instrumento. Sin embargo si llamamos a la función tocar de este objeto, se imprimirá el mensaje “Toco una guitarra”, en lugar de “Toco un instrumento”. Polimorfismo.
+
+En resumen, tenemos varios métodos con el mismo nombre y distinta implementación y el intérprete se encarga de decidir como enlazarlos según el caso.
+
+http://mundogeek.net/archivos/2004/07/28/javascript-polimorfismo/
+
+
+*************************************************************************************************************************
+
+AJAX
+
+Var request;
+if(window.XMLHttpRequest){
+	request = new XMLHttpRequest();
+}else{
+	request = new ActiveXobjetc('Microsoft.XMLHttp');
+}
+
+request.open('get', 'data.json');
+
+request.onreadystatechange = function(){
+	if( (request.readyState === 4) && (request.status === 200) ){
+
+	}
+}
+
+request.send();
+
+
+*************************************************************************************************************************
+
+Css Selectors
+
+E > F 	// Matches any F element that is a child of an element E.
+E + F 	// Matches any F element immediately preceded by a sibling element E.
+E[foo] 	// Matches any E element with the "foo" attribute set (whatever the value).
+E[foo="warning"] 	// Matches any E element whose "foo" attribute value is exactly equal to "warning".
+:nth-child(2) 		// Selects every <p> element that is the second child of its parent
+
+*************************************************************************************************************************
+
+MODULE PATTERN // 
+
+(function(){ //Anonimus function
+	privateVar = 2 //Variable private
+	return { // Publico
+		get: function(){
+			this.
+		}
+	}
+		
+}()) //Self invoking
+
+http://www.etnassoft.com/2011/04/11/el-patron-de-modulo-en-javascript-en-profundidad/
+
+
+*************************************************************************************************************************
+
+REVEALING PATTERN // Con este patrón, buscamos un diseño donde todos los métodos se definan, tanto los públicos como privados, dentro del cuerpo del objeto. Luego, aquellos que formen parte del API público, serán reveledos mediante referencia en el bloque return. // Problema: ambos patrones (el tradicional y el revelado) continúan con la necesidad de llamar a cada método precediéndolo del nombre del objeto. Por otro lado, tenemos el problema que supone el no poder confiar en las referencias internas que establece this, algo también desventajoso ya que obliga a cachear valores para mantener la integridad en determinados contextos.
+
+var MyLibrary = {};
+ 
+// Library definition
+MyLibrary = (function () {
+  // Private variables / properties
+  var p1, p2;
+ 
+  // Private methods
+  function aPrivateMethod() {
+  }
+ 
+  // Public Method
+  function publicMethod () {
+  }
+ 
+  // Another Public Method
+  function anotherPublicMethod () {
+  }
+ 
+  // Public API
+  return {
+    publicMethod: publicMethod,
+    anotherPublicMethod: anotherPublicMethod
+  }
+}());
+
+http://www.etnassoft.com/2011/04/12/revealing-module-javascript/
+
+
+*************************************************************************************************************************
+
+Require.js // (AMD Asynchronous Module Definition) Nos permite mantener nuestro código limpio y en una suerte de “carga en demanda”, ya que se pueden definir dependencias. Por medio de RequireJS nosotros definimos una serie de módulos, en donde cada módulo, puede o no depender de otros, de tal manera que RequireJS se encargará de cargar asíncronamente los módulos.
+
+<script data-main="main" src="scripts/require.js"></script>
+
+require(['modulo1', 'modulo2'], function(modulo1, modulo2){
+  do something....
+});
+
+//
+define(['dependencias'], function(dependencia){
+    return {
+
+    };
+});
+
+http://abiee.blogspot.com.ar/2012/05/descubriendo-requirejs.html
+http://fernetjs.com/2012/02/requirejs-modulos-y-dependencias/
+
+
+*************************************************************************************************************************
+
+Backbone
+
+Create Router
+
+    var AppRouter = Backbone.Router.extend({
+        routes: {
+            "*actions": "defaultRoute" // matches http://example.com/#anything-here
+        }
+    });
+    // Initiate the router
+    var app_router = new AppRouter;
+
+    app_router.on('route:defaultRoute', function(actions) {
+        alert(actions);
+    })
+
+    // Start Backbone history a necessary step for bookmarkable URL's
+    Backbone.history.start();
+
+Create View
+Create Collection

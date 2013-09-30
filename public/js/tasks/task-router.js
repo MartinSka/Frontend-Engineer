@@ -24,5 +24,5 @@ define(
 
 		return {
     		initialize: initialize
-  		};
-	});
+ 		};
+});
