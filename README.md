@@ -1,9 +1,10 @@
 # Frontend Enginner
 
-+ Depencies
-    + Dpd
-    ## install from npm
-	  <code>npm install deployd -g</code>
+**Depencies**
+* Dpd (http://deployd.com/)
+    <code>
+	npm install deployd -g
+</code>
 
 ## About the author
 
