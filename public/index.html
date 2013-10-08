@@ -25,62 +25,102 @@
             </nav>
         </div>
     </header>
-    <div id="navigation"> 
-        <h2>Tasks</h2>
-        <ul>
-            <li>New Project</li>
-            <li>
-                <h3>House</h3>
-                <ul>
-                    <li>Supermercado</li>
-                </ul>
-            </li>
-            <li>
-                <h3>Work</h3>
-                <ul>
-                    <li>Supermarcado</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+    <div class="cointainer">
+        <div id="navigation"> 
+            <h2>Tasks</h2>
+            <ul>
+                <li>New Project</li>
+                <li>
+                    <h3>House</h3>
+                    <ul>
+                        <li>Supermercado</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Work</h3>
+                    <ul>
+                        <li>Supermarcado</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
 
-    <div id="main">
-        <h2>Project Name</h2>
-        <form id="new-task">
-            <input paceholder="Add Task">    
-        </form>
-        
-        <ul id="bla">
-            <li>
-                Check | Task 1                           Fav | Label | Trash
+        <div id="main">
+            <div class="panel">
+                <h2 contenteditable="true">New Project</h2>
+                
+                <form id="new-task">
+                    <input type="text" placeholder="Add Task" autofocus>
+                    <button>Add</button>                    
+                </form>
+            </div>
+            
+            <ul id="tasks">
+                <li class="panel">
+                    <input type="checkbox">
+                    <label contenteditable="true">Lista de cosas para el supermarcado</label>                    
+                    <button data-icon="subtask">Add subtask</button>
+                    <button data-icon="label">Label</button>
+                    <button data-icon="trash">Delete</button>                    
+                </li>
+            </ul>
+        </div>
+
+        <div id="sidebar">
+            <header>
+                Asignado | Fecha fin | SubTask| Close              
+            </header>
                 Lista de cosas para el supermarcado
-            </li>
-        </ul>
-    </div>
+                <textarea placeholder="Add description"></textarea>
+                <ul class="subtasks">
+                    <li><input type="checkbox">SubTask1</li>
+                    <li><input type="checkbox">SubTask2</li>
+                    <li><input type="checkbox">SubTask3</li>
+                </ul>
 
-    <div id="sidebar">
-        <header>
-            Asignado | Fecha fin | SubTask| Close              
-        </header>
-            Lista de cosas para el supermarcado
-            Descrption
-
-            Subtask
-                - Lechuga
-                - Tomate
-
-            Historial (Ultiamas modificaciones, asignaciones)
-
-            Chat
-            Quienes esta | Asignar + followers
+                <div class="comments">
+                    <p>Martin Ska created task.Sep 17</p>
+                    <p>Martin Ska added to Supermercado.Sep 17</p>
+                    <p>Martin Ska assigned to Martin Ska.Sep 18</p>
+                    <p class="comment"><strong>Martin Ska:</strong> adasda</p>
+                    <p>Sep 18 at 4:53pm</p>
+                </div>
+                <textarea placeholder="Write a comment..."></textarea>
+                Quienes esta | Asignar + followers
+        </div>
     </div>
 
     <script data-main="js/main" src="js/require.js"></script>
 
     <script type="text/template" id="task-template">
         <input type="checkbox">
-        <Label contenteditable="true"><%= title %></label>
-        <button id="delete">Delete</button>
+        <label contenteditable="true"><%= title %></label>
+        <button data-icon="subtask">Add subtask</button>
+        <button data-icon="label">Label</button>
+        <button data-icon="trash">Delete</button>
+    </script>
+
+    <script type="text/template" id="taskInfo-template">
+        <header>
+            Asignado | Fecha fin | SubTask| Close              
+        </header>
+        <h3><%= title %></h3>
+        <textarea placeholder="Add description"></textarea>
+        <ul class="subtasks">
+            <li><input type="checkbox">SubTask1</li>
+            <li><input type="checkbox">SubTask2</li>
+            <li><input type="checkbox">SubTask3</li>
+        </ul>
+
+        <div class="comments">
+            <p>Martin Ska created task.Sep 17</p>
+            <p>Martin Ska added to Supermercado.Sep 17</p>
+            <p>Martin Ska assigned to Martin Ska.Sep 18</p>
+            <p class="comment"><strong>Martin Ska:</strong> adasda</p>
+            <p>Sep 18 at 4:53pm</p>
+        </div>
+        <textarea placeholder="Write a comment..."></textarea>
+        Quienes esta | Asignar + followers
     </script>
 
 </body>
@@ -104,4 +144,4 @@ http://heyflat.com/themes/todo/index.html#
 http://martin.groovehq.com/groove_client/
 https://app.asana.com/0/7773909121572/7773909121574
 http://themeforest.net/item/kato-responsive-admin-template/full_screen_preview/5442409
--->
+ -->

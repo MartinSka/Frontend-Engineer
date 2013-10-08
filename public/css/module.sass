@@ -2,3 +2,62 @@ $color: #4d7496
 
 .logo
 	float: left
+
+/************************/
+
+.panel
+	background-color: white
+	border: 1px solid #ebeff6
+	margin-bottom: 20px
+	padding: 2%
+	width: 96%
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05)
+	box-shadow: 0 1px 1px rgba(0,0,0,0.05)
+
+	h2
+		font-size: 2.2rem
+		margin: 0 0 1rem 0
+
+/************************/
+
+.comments
+	border: 1px solid #d4d4d4
+	border-left: 0px
+	border-right: 0px
+	color: lighten(#555, 25%)
+	font-size: 1rem
+	margin: 10px 0
+	padding: 5px
+
+	> p
+		margin: 5px 0
+
+	.comment
+		font-size: 1.2rem
+		color: #555
+		margin: 7px 0 0
+	.comment + p		
+		margin-top: 4px	
+
+/************************/
+
+[data-icon]
+	border: none
+	font-size: 0
+	height: 20px	
+	vertical-align: top
+
+[data-icon="subtask"]
+	background: url(../images/people.svg) no-repeat
+	background-size: 22px	
+	width: 22px
+
+[data-icon="label"]
+	background: url(../images/label.svg) no-repeat
+	background-size: 24px
+	width: 22px
+
+[data-icon="trash"]
+	background: url(../images/trash.svg) no-repeat
+	background-size: 15px		
+	width: 15px

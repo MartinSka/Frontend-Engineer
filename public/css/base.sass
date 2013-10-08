@@ -1,4 +1,41 @@
 @import 'normalize.sass'
 
+html 
+	font-size: 62.5% 
+
 body
 	background: #f9f9f9
+	color: #555
+	font-size: 1.4rem
+ul
+	padding: 0
+li
+	list-style: none
+
+
+input[type="text"]		
+	border: 1px solid rgba(0,0,0,0)
+	width: 95%	
+	-webkit-transition: all .3s ease-in-out
+	-moz-transition: all .3s ease-in-out
+	-webkit-transition: all .3s ease-in-out
+	transition: all .3s ease-in-out
+
+input:focus
+	outline: none
+
+textarea
+	@extend input[type="text"]
+	background: none
+	padding: 2.5%
+	
+
+textarea:hover
+	border: 1px solid #d4d4d4
+
+textarea:focus
+	border: 1px solid #d4d4d4
+	outline: #74c1ed
+	-moz-box-shadow: 0 0 3px 1px rgba(77,116,148,1)
+	-webkit-box-shadow: 0 0 3px 1px rgba(77,116,148,1)
+	box-shadow: 0 0 3px 1px rgba(77,116,148,1)
